@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		/*Liberar o aplicativo de gerenciamento H2 (Banco criado em memoria)*/
+		/*Liberar o aplicativo de gerenciamento H2 (Banco criado em memoria) No Perfil de "test"*/
 		if (Arrays.asList(env.getActiveProfiles()).contains("test")) {
 			http.headers().frameOptions().disable();
 		}
